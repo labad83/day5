@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="removeLife">Click to hit the elf!</button>
+    <button id="removeLifeWarrior">Click to hit the warrior!</button>
+    <script src="elfClass.js"></script>
+
+    <script>
+        var elf10 = new Elf("Legolas the Elf", "gold", new LatLng(10, 20))
+        var warrior1000 = new Warrior("Conan the warrior", "tizona", new LatLng(10, 20))
+
+        document.getElementById("removeLife").onclick = function () {
+            elf10.receiveHit(Math.floor(Math.random() * 20))
+        }
+
+        document.getElementById("removeLifeWarrior").onclick = function () {
+            warrior1000.receiveHit(Math.floor(Math.random() * 20))
+        }
+    </script>
+</body>
+
+</html>
