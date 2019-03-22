@@ -1,22 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
     <button id="removeLife">Click to hit the elf!</button>
     <script src="index4.js"></script>
 
     <script>
-        document.getElementById("removeLife").onclick = function () {
-            elf2.receiveHit(Math.floor(Math.random() * 20))
+        function ElfArmy(nSoldiers) {
+            this.elves = []
 
-            console.log(elf2.lifePoints)
+            for (var i = 0; i < nSoldiers; i++) {
+                this.elves.push(new Elf("dan", "silver", new LatLng(10, -20)))
+            }
         }
-    
+
+        console.log(new ElfArmy(300))
+
+
+        // document.getElementById("removeLife").onclick = function () {
+        //     elves[3].receiveHit(Math.floor(Math.random() * 20))
+
+
+        // }
+
     </script>
 </body>
+
 </html>

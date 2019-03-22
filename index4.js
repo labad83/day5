@@ -42,8 +42,8 @@ Elf.prototype.die = function () {
 
 var elf1 = new Elf("dan", "silver", new LatLng(10, -20))
 var elf2 = new Elf("legolas", "silver", new LatLng(20, -20))
-console.log(elf1)
-console.log(elf1.location.lng)
-elf1.shootArrow()
-elf2.shootArrow()
+// console.log(elf1)
+// console.log(elf1.location.lng)
+// elf1.shootArrow()
+// elf2.shootArrow()
 // console.log(typeof elf1)
