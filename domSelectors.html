@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.2/d3.js"></script>
+    <style>
+        body {
+            display: flex;
+            flex-wrap: wrap
+        }
+        div {
+            --dim: 20px;
+            height: var(--dim);
+            width: var(--dim);
+            /* outline:1px solid black; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+        }
+        .active {
+            /* transform: rotate(180deg) !important; */
+            opacity: 0;
+            transition: all 1s;
+        }
+
+        
+    </style>
+</head>
+<body>
+    
+
+    <script>
+        var cDiv
+        var bodyDOMEl = document.querySelector("body")
+        var totalElements = 500
+        var linearScale = d3.scaleLinear().domain([0, totalElements]).range([255, 0])
+
+        for (var i = 1; i <= totalElements; i++ ){
+            var div = document.createElement("div")
+            // div.setAttribute("id", "layer" + i)
+            // cDiv = document.querySelector("#layer" + i)
+
+            if (i % 2 === 0) {
+                div.style.backgroundColor = `rgba(${linearScale(i)}, 0, 0, 1)`
+            }   else {
+                div.style.backgroundColor = `rgba(0, ${linearScale(i)}, 0, 1)`
+            }
+
+            div.style.transform = `rotate(${i * 2}deg)`
+            // div.innerHTML = `<button>${i}</button>`
+
+            div.onclick = function () {
+                this.style.transform = "rotate(180deg)"
+                this.className = "active"
+            }
+            
+            bodyDOMEl.appendChild(div)
+            
+        }
+        // div1.style.backgroundColor = "#f00"
+        // div1.onclick = function (){
+        //     this.style.display = "none"
+        // }
+    </script>
+</body>
+</html>
